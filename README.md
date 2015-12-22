@@ -1,3 +1,6 @@
+IN DEVELOPMENT!
+NOT READY TO USE AT ALL!
+
 # Ember-cli-deploy-ftp
 
 This README outlines the details of collaborating on this Ember addon.
