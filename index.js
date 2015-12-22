@@ -26,6 +26,10 @@ module.exports = {
         var distFiles = this.readConfig('distFiles');
 
         var filesToUpload = distFiles.filter(minimatch.filter(filePattern, {matchBase: true}));
+
+        ftp = new ftp();
+        ftp.upload({host: 'test'});
+        ftp.upload({host: 'test'});
       },
       didDeploy(context) {
       }
