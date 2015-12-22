@@ -18,7 +18,10 @@ module.exports = {
         port: 21,
         distFiles(context) {
           return context.distFiles || [];
-        }
+        },
+        distDir(context) {
+          return context.distDir || [];
+        },
       },
       upload(context) {
         var filePattern = this.readConfig('filePattern');
@@ -32,7 +35,7 @@ module.exports = {
 
         var filesToUpload = distFiles.filter(minimatch.filter(filePattern, {matchBase: true}));
 
-        ftp = new ftp();
+        ftp = new ftp({distDir});
         ftp.connect({host, port, user, pass}).then(()=> {
           console.log('connected :)');
           ftp.upload(filesToUpload);
