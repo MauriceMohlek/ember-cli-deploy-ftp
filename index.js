@@ -36,7 +36,7 @@ module.exports = {
         var filesToUpload = distFiles.filter(minimatch.filter(filePattern, {matchBase: true}));
 
         ftp = new ftp({distDir});
-        ftp.connect({host, port, user, pass}).then(()=> {
+        ftp.connect({host, port, user, pass, debugMode: true}).then(()=> {
           console.log('connected :)');
           ftp.upload(filesToUpload);
         }).catch(this._errorMessage.bind(this));
